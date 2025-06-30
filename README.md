@@ -1,37 +1,40 @@
 # 📦 Twilio + CodeIgniter 4 + ReactJS Demo
-> Twilio demo using CodeIgniter (back-end) and ReactJS (front-end) to send reminders to clients through SMS to replace their water filter cartridges. The program uses CRON Jobs to check each entry and send text messages notifying the client they need to replace their cartridge every 6 months. 
+
+> A full-stack demo application using ReactJS (front end) and CodeIgniter 4 (back end) to send SMS reminders via Twilio. It automates notifications for clients to replace their water filter cartridges every 6 months, using a CRON job to check and dispatch messages on schedule.
 
 ---
 
 ## 🚀 Features
 
-- Front-end: [ReactJS/HTML/CSS/Bootstrap]
-- Backend: [PHP/CI4]
+- Front-end: ReactJS, HTML, CSS, Bootstrap
+- Back-end: PHP (CodeIgniter 4)
 - Server-side input validation
-- API integrations (Twilio)
-- Mobile-responsive design
-- CORS Policy compliance
-- Git/Github version control
+- RESTful API structure
+- Twilio integration for SMS messaging
+- CORS policy compliance
+- Mobile-responsive UI
+- Version control with Git & GitHub
 
 ---
 
 ## 📁 What This Demonstrates
 
-This project showcases my experience in:
-- Full-stack development
-- RESTful API design
-- Creating secure and validated user input flows
-- Integrating third-party APIs
-- Deploying web applications
+This project highlights my experience in:
+- Full-stack web development
+- Building RESTful APIs with CI4
+- Secure input validation and data handling
+- Integrating third-party services (Twilio)
+- Automating backend tasks using CRON jobs
+- Front-end development with ReactJS and Bootstrap
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Tech         | Used For                    |
-|--------------|-----------------------------|
-| ReactJS      | Front-end UI                |
-| PHP / CI4    | Backend logic & validation  |
-| Bootstrap    | Styling & responsive layout |
-| Git/GitHub   | Version control             |
-|Twilio        | Send SMS text to users      |
+| Tech         | Role                             |
+|--------------|----------------------------------|
+| ReactJS      | Front-end UI development         |
+| PHP / CI4    | Backend logic and API handling   |
+| Bootstrap    | Styling and responsive layout    |
+| Twilio       | SMS messaging via API            |
+| Git/GitHub   | Version control and collaboration |
