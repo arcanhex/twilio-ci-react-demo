@@ -1,18 +1,23 @@
-*/config/development
-*/logs/log-*.php
-!*/logs/index.html
-*/cache/*
-!system/cache/*
-!*/cache/index.html
-!*/cache/.htaccess
-
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
-
-#codeigniter 3
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
+# === CodeIgniter 4 ===
+/writable/*
+!/writable/index.html
 /vendor/
+/.env
+/public/build/
+/public/uploads/
+
+# === React ===
+node_modules/
+build/
+.env.local
+.env.development
+.env.production
+.DS_Store
+
+# === General ===
+*.log
+*.bak
+*.tmp
+*.swp
+.idea/
+.vscode/
