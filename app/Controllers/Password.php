@@ -13,7 +13,7 @@ class Password extends BaseController
     }
     public function index()
     {
-        // 403cd91bb378f079
+        // 4d98df0a72.9d2da7762c431b709da4
         $pass = $this->request->getJSON(true);
 
 

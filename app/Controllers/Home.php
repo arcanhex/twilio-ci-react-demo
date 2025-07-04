@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Entities\Mant;
+use DateTime;
 
 class Home extends BaseController
 {
@@ -28,10 +29,6 @@ class Home extends BaseController
     {
         $mants = $this->request->getJSON(true);
 
-        // return $this->response->setJSON([
-        //     'isSaved' => $mants
-        // ]);
-
         $tokenParts = explode('.', $mants['password'], 2);
 
         if (count($tokenParts) !== 2) {
@@ -47,7 +44,7 @@ class Home extends BaseController
         $token = $this->passModel->where('lookUpID', $lookUpID)
                              ->first();
 
-        if (!password_verify($submittedPass, $token->hashedPassword)) {
+        if (!$token || !password_verify($submittedPass, $token->hashedPassword) || $token->attempts >= 5) {
             return $this->response->setJSON([
                 'isSaved' => false,
                 'errors' => [
@@ -56,10 +53,39 @@ class Home extends BaseController
             ]);
         }
 
+        if ($token->expires_at == null) {
+            $token->expires_at = date('Y-m-d H:i:s', strtotime('+1 hour'));
+
+            // $this->passModel->disableValidation();
+
+            $this->passModel->update($token->id, $token);
+        } else {
+            $now = new DateTime();
+            $expiresAt = new DateTime($token->expires_at);
+
+            if ($now > $expiresAt) {
+                return $this->response->setJSON([
+                    'isSaved' => false,
+                    'errors' => [
+                        'password' => 'The token is invalid, please try again'
+                    ]
+                ]);
+            }
+        }
+
+        
+
         if ($this->model->validate($mants)) {
+
+            $attempts = $token->attempts;
+
             $msg = "Thanks {$mants['fullName']} for registering to receive alerts when your water filter cartridge needs replacement. You'll receive alerts every 6 months to remind you. Have a great day!";
             
-            $this->twilio->sendMsg($mants->phoneNumber, $msg);
+            // $this->twilio->sendMsg($mants['phoneNumber'], $msg);
+
+            $token->attempts = $attempts + 1;
+
+            $this->passModel->update($token->id, $token);
 
             return $this->response->setJSON([
                 'isSaved' => true, 

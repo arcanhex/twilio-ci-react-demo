@@ -57,7 +57,7 @@ function FilterForm() {
                 <div className="col-12">
                     <h2 className="mb-4">Water Filter Cartridge Replacement Reminder</h2>
                     <p>This is just a demo software, to see the source code <a href="https://github.com">click here</a></p>
-                    <p>⚠️ Access to the live demo is protected by a temporary secret token to prevent abuse. If you'd like to test the working Twilio integration, contact me at <a href="mailto:wellingtonarcangel@gmail.com">wellingtonarcangel@gmail.com</a> and I’ll send you an access password that lasts 24 hours.</p>
+                    <p>⚠️ Access to the live demo is protected by a temporary secret token to prevent abuse. If you'd like to test the working Twilio integration, contact me at <a href="mailto:wellingtonarcangel@gmail.com">wellingtonarcangel@gmail.com</a> and I’ll send you an access token that lasts 1 hour after first use. You're only allowed 5 uses per token</p>
                     <form onSubmit={handleSubmit} className="card p-4 shadow-sm">
                         <div className="mb-3">
                             <label htmlFor="password" className="form-label">Secret Token</label>
