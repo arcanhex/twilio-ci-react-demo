@@ -5,6 +5,7 @@
 /.env
 /public/build/
 /public/uploads/
+/app/Controllers/Password.php
 
 # === React ===
 node_modules/

@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/', 'Home::index');
+$routes->get('/migrate', 'Migrate::index');
 
 $routes->group('api', ['filter' => 'cors'], function ($routes) {
     $routes->get('list', 'Home::list');
