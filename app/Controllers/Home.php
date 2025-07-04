@@ -16,6 +16,13 @@ class Home extends BaseController
         $this->passModel = new \App\Models\PasswordModel;
     }
 
+    public function index()
+    {
+        return $this->response
+            ->setContentType('text/html')
+            ->setBody(file_get_contents(FCPATH . 'index.html'));
+    }
+
     public function list()
     {
         // $mant = $this->model->findAll(); 
@@ -81,7 +88,7 @@ class Home extends BaseController
 
             $msg = "Thanks {$mants['fullName']} for registering to receive alerts when your water filter cartridge needs replacement. You'll receive alerts every 6 months to remind you. Have a great day!";
             
-            // $this->twilio->sendMsg($mants['phoneNumber'], $msg);
+            $this->twilio->sendMsg($mants['phoneNumber'], $msg);
 
             $token->attempts = $attempts + 1;
 
