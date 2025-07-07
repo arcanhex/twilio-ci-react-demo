@@ -4,6 +4,12 @@
 
 ---
 
+## 👾 LIVE Demo
+
+[Click here](https://filternotifier.wellsprivateplayhouse.fun) for demo
+
+⚠️ Access to the live demo is protected by a temporary secret token to prevent abuse. If you'd like to test the working Twilio integration, contact me at [wellingtonarcangel@gmail.com](mailto:wellingtonarcangel@gmail.com) and I’ll send you an access token that lasts 1 hour after first use. You're only allowed 5 uses per token
+
 ## 🚀 Features
 
 - Front-end: ReactJS, HTML, CSS, Bootstrap
